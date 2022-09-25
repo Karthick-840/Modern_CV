@@ -1,0 +1,604 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2015 Jan Küster
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+%============================================================================%
+%
+%	DOCUMENT DEFINITION
+%
+%============================================================================%
+
+%we use article class because we want to fully customize the page and dont use a cv template
+\documentclass[10pt,A4]{article}	
+
+
+%----------------------------------------------------------------------------------------
+%	ENCODING
+%----------------------------------------------------------------------------------------
+
+%we use utf8 since we want to build from any machine
+\usepackage[utf8]{inputenc}		
+\usepackage{fontawesome}
+\usepackage{setspace}
+\usepackage{hyperref}
+% provides \isempty test
+\usepackage{xifthen}
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% some tex-live fonts - choose your own
+
+%\usepackage[defaultsans]{droidsans}
+%\usepackage[default]{comfortaa}
+%\usepackage{cmbright}
+\usepackage[default]{raleway}
+%\usepackage{fetamont}
+%\usepackage[default]{gillius}
+%\usepackage[light,math]{iwona}
+%\usepackage[thin]{roboto} 
+
+% set font default
+\renewcommand*\familydefault{\sfdefault} 	
+\usepackage[T1]{fontenc}
+
+% more font size definitions
+\usepackage{moresize}		
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE LAYOUT  DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+%debug page outer frames
+%\usepackage{showframe}			
+
+
+%define page styles using geometry
+\usepackage[a4paper]{geometry}		
+
+% for example, change the margins to 2 inches all round
+\geometry{top=.5cm, bottom=-.6cm, left=-0.1cm, right=0cm} 	
+
+%use customized header
+\usepackage{fancyhdr}				
+\pagestyle{fancy}
+
+%less space between header and content
+\setlength{\headheight}{-5pt}		
+
+
+%customize entries left, center and right
+\lhead{}
+\chead{}
+\rhead{}
+
+\newcommand{\padding}{1cm}
+\newcommand{\innerwidth}{\linewidth-\padding-\padding}
+
+%indentation is zero
+\setlength{\parindent}{0mm}
+
+%----------------------------------------------------------------------------------------
+%	TABLE /ARRAY DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for layouting tables
+\usepackage{multicol}			
+\usepackage{multirow}
+
+%extended aligning of tabular cells
+\usepackage{array}
+
+\newcolumntype{x}[1]{%
+>{\raggedleft\hspace{0pt}}p{#1}}%
+
+
+%----------------------------------------------------------------------------------------
+%	GRAPHICS DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for header image
+\usepackage{graphicx}
+
+%for floating figures
+\usepackage{wrapfig}
+\usepackage{float}
+%\floatstyle{boxed} 
+%\restylefloat{figure}
+
+%for drawing graphics		
+\usepackage{tikz}				
+\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+
+
+%----------------------------------------------------------------------------------------
+%	Color DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+\usepackage{transparent}
+\usepackage{color}
+
+%accent color
+\definecolor{sectcol}{RGB}{255,150,0}
+
+%dark background color
+\definecolor{}{RGB}{110,110,110}
+
+%light background / accent color
+\definecolor{softcol}{RGB}{225,225,225}
+
+% light bg
+\definecolor{light}{RGB}{210, 210, 210}
+%we use article class because we want to fully customize the page and dont use a cv template
+\documentclass[10pt,A4]{article}	
+
+
+%----------------------------------------------------------------------------------------
+%	ENCODING
+%----------------------------------------------------------------------------------------
+
+%we use utf8 since we want to build from any machine
+\usepackage[utf8]{inputenc}		
+
+%----------------------------------------------------------------------------------------
+%	LOGIC
+%----------------------------------------------------------------------------------------
+
+% provides \isempty test
+\usepackage{xifthen}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% some tex-live fonts - choose your own
+
+%\usepackage[defaultsans]{droidsans}
+%\usepackage[default]{comfortaa}
+%\usepackage{cmbright}
+\usepackage[default]{raleway}
+%\usepackage{fetamont}
+%\usepackage[default]{gillius}
+%\usepackage[light,math]{iwona}
+%\usepackage[thin]{roboto} 
+
+% set font default
+\renewcommand*\familydefault{\sfdefault} 	
+\usepackage[T1]{fontenc}
+
+% more font size definitions
+\usepackage{moresize}		
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE LAYOUT  DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+%debug page outer frames
+%\usepackage{showframe}			
+
+
+%define page styles using geometry
+\usepackage[a4paper]{geometry}		
+
+% for example, change the margins to 2 inches all round
+\geometry{top=1.75cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+
+%use customized header
+\usepackage{fancyhdr}				
+\pagestyle{fancy}
+
+%less space between header and content
+\setlength{\headheight}{-5pt}		
+
+
+
+
+%indentation is zero
+\setlength{\parindent}{0mm}
+
+%----------------------------------------------------------------------------------------
+%	TABLE /ARRAY DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for layouting tables
+\usepackage{multicol}			
+\usepackage{multirow}
+
+%extended aligning of tabular cells
+\usepackage{array}
+
+\newcolumntype{x}[1]{%
+>{\raggedleft\hspace{0pt}}p{#1}}%
+
+
+%----------------------------------------------------------------------------------------
+%	GRAPHICS DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for header image
+\usepackage{graphicx}
+
+%for floating figures
+\usepackage{wrapfig}
+\usepackage{float}
+%\floatstyle{boxed} 
+%\restylefloat{figure}
+
+%for drawing graphics		
+\usepackage{tikz}				
+\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+
+
+%----------------------------------------------------------------------------------------
+%	Color DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+\usepackage{color}
+
+%accent color
+\definecolor{sectcol}{RGB}{255,150,0}
+
+%dark background color
+\definecolor{bgcol}{RGB}{110,110,110}
+
+%light background / accent color
+\definecolor{softcol}{RGB}{225,225,225}
+
+%----------------------------------------------------------------------------------------
+% 	HEADER
+%----------------------------------------------------------------------------------------
+
+% remove top header line
+\renewcommand{\headrulewidth}{0pt} 
+
+%remove botttom header line
+\renewcommand{\footrulewidth}{0pt}	  	
+
+%remove pagenum
+\renewcommand{\thepage}{}	
+
+%remove section num		
+\renewcommand{\thesection}{}			
+
+%----------------------------------------------------------------------------------------
+% 	ARROW GRAPHICS in Tikz
+%----------------------------------------------------------------------------------------
+
+% a six pointed arrow poiting to the left
+\newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}	
+
+% include the left arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\larrow}[1]
+{\begin{tikzpicture}[scale=0.58]
+	 \filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
+ \end{tikzpicture}
+}
+
+% a six pointed arrow poiting to the right
+\newcommand{\tzrarrow}{ (0,0.2) -- (0.1,0) -- (0.3,0) -- (0.2,0.2) -- (0.3,0.4) -- (0.1,0.4) -- cycle;}
+
+% include the right arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\rarrow}
+{\begin{tikzpicture}[scale=0.7]
+	\filldraw[fill=sectcol!100,draw=sectcol!100!black] \tzrarrow
+ \end{tikzpicture}
+}
+
+
+
+%----------------------------------------------------------------------------------------
+%	custom sections
+%----------------------------------------------------------------------------------------
+
+% create a coloured box with arrow and title as cv section headline
+% param 1: section title
+%
+\newcommand{\cvsection}[1]
+{
+\colorbox{sectcol}{\mystrut \makebox[1\linewidth][l]{
+\larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \textcolor{white}{\textbf{#1}}\hspace{4pt}
+}}\\
+}
+
+%create a coloured arrow with title as cv meta section section
+% param 1: meta section title
+%
+\newcommand{\metasection}[2]
+{
+\begin{tabular*}{1\textwidth}{p{2.4cm} p{8.0cm}}
+\larrow{bgcol}	\normalsize{\textcolor{sectcol}{#1}}&#2\\[12pt]
+\end{tabular*}
+}
+
+\newcommand{\metasections}[2]
+{
+\begin{tabular*}{1\textwidth}{p{0.8cm} p{11cm}}
+\larrow{bgcol}	\normalsize{\textcolor{sectcol}{#1}}&#2\\[12pt]
+\end{tabular*}
+}
+
+% adapted from AltaCV: https://github.com/liantze/AltaCV
+\newcommand{\tag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+}
+
+%----------------------------------------------------------------------------------------
+%	 CV EVENT
+%----------------------------------------------------------------------------------------
+
+% creates a stretched box as cv entry headline followed by two paragraphs about 
+% the work you did
+% param 1:	event time i.e. 2014 or 2011-2014 etc.
+% param 2:	event name (what did you do?)
+% param 3:	institution (where did you work / study)
+% param 4:	what was your position
+% param 5:	some words about your contributions
+%
+\newcommand{\cvevent}[6]
+{
+\vspace{8pt}
+	\begin{tabular*}{1\textwidth}{p{1.5cm}  p{10.8cm} x{3.9cm}}
+ \textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol}{#3}
+
+	\end{tabular*}
+\vspace{-12pt}
+\textcolor{softcol}{\hrule}
+\vspace{8pt}
+	\begin{tabular*}{1\textwidth}{p{1.5cm} p{16.0cm}}
+&		 \larrow{bgcol}  #4\\[2pt]
+&		 \larrow{bgcol}  #5\\[4pt]
+&		 \larrow{bgcol}  #6\\[6pt]
+	\end{tabular*}
+}
+
+\newcommand{\cveventa}[4]
+{
+\vspace{8pt}
+	\begin{tabular*}{1\textwidth}{p{1.5cm}  p{10.8cm} x{3.9cm}}
+ \textcolor{bgcol}{#1}& \textbf{#2} 
+
+	\end{tabular*}
+\vspace{-12pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{p{1.5cm} p{16.0cm}}
+&		 \larrow{bgcol}  #3\\[3pt]
+&		 \larrow{bgcol}  #4\\[6pt]
+	\end{tabular*}
+}
+
+\newcommand{\cvevents}[5]
+{
+\vspace{8pt}
+	\begin{tabular*}{1\textwidth}{p{1.5cm}  p{10.8cm} x{3.9cm}}
+ \textcolor{bgcol}{#1}& \textbf{#2} 
+
+	\end{tabular*}
+\vspace{-12pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{p{1.5cm} p{16.0cm}}
+&		 \larrow{bgcol}  #3\\[3pt]
+&		 \larrow{bgcol}  #4\\[6pt]
+&		 \larrow{bgcol}  #5\\[9pt]
+	\end{tabular*}
+}
+
+
+% creates a stretched box as 
+\newcommand{\cveventmeta}[2]
+{
+	\mbox{\mystrut \hspace{87pt}\textit{#1}}\\
+	#2
+}
+
+%----------------------------------------------------------------------------------------
+% CUSTOM STRUT FOR EMPTY BOXES
+%----------------------------------------- -----------------------------------------------
+\newcommand{\mystrut}{\rule[-.3\baselineskip]{0pt}{\baselineskip}}
+
+%----------------------------------------------------------------------------------------
+% CUSTOM LOREM IPSUM
+%----------------------------------------------------------------------------------------
+\newcommand{\lorem}
+{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.}
+
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT CONTENT
+%
+%
+%
+%============================================================================%
+\begin{document}
+
+
+%use our custom fancy header definitions
+\pagestyle{fancy}	
+
+
+%---------------------------------------------------------------------------------------
+%	TITLE HEADLINE
+%----------------------------------------------------------------------------------------
+\vspace{-20.55pt}
+
+% use this for multiple words like working titles etc.
+%\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\hspace{46pt}\HUGE{\textcolor{white}{\textsc{Jan Küster}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \parbox[b]{5cm}{   \large{ \textcolor{white}{{IT Consultant}}}\\
+% \large{ \textcolor{white}{{Resume}}}}
+%}}
+\fcolorbox{}{}{
+\begin{minipage}[c][0.085\textheight][t]{\linewidth}
+\begin{center}
+	\vspace{14pt}
+	\HUGE{\textcolor{white}{\textsc{Karthick Jayaraman}}}\\
+	\textcolor{white}{\small{Bayer Crop Science $\cdot$  Rotterdam, The Netherlands }}
+\end{center}
+\end{minipage}}\\[0pt]
+%----------------------------------------------------------------------------------------
+% SUMMARY
+%----------------------------------------------------------------------------------------
+\fcolorbox{sectcol}{sectcol}{
+\begin{minipage}[c][0.03\textheight][t]{\linewidth}
+\vspace{-3pt}
+\begin{center}
+\parbox[b]{0.75\linewidth}{
+	\begin{center}
+	\large
+	\larrow{}\larrow{} \textcolor{white}{ \bf Enabling scalable AI for use-cases in life sciences.} \rarrow{}\rarrow{}
+	\end{center}
+}
+\end{center}
+\end{minipage}}\\[-4pt]
+
+%----------------------------------------------------------------------------------------
+%	HEADER IMAGE
+%----------------------------------------------------------------------------------------
+
+
+\fcolorbox{white}{white}{
+\begin{minipage}[c][0.16\textheight][t]{\linewidth}
+\vspace{8pt}
+\begin{center}
+\parbox[c]{\innerwidth}{
+	
+	\hspace{-28pt}
+	\parbox[b]{5cm}{
+	\metasection{Position:}{Research Associate in Global Seed Technology}
+	\metasection{Role:}{Leading global projects within Product Supply organisation.} 
+	\metasection{Use-case:}{To improve seed quality \& genetic purity.}
+	\metasection{Approach:}{Multi-dimensional imaging, Digital phenotyping \& ensemble modeling}
+	\metasection{Tools:}{Build (Python \& R ) \& Deploy (Docker/AWS)}
+	
+	}
+	\hspace{180pt}
+	\parbox[b]{0.5cm}{
+	\metasections{ \faEnvelope}{karthick840@gmail.com} 
+	\metasections{ \large \faMobile:}{31684664641, 4917647362326}
+	\metasections{\faLinkedinSquare:}{\href{https://www.linkedin.com/in/karthick840/}{karthick840}}
+	\metasections{\faGithub:}{\href{https://github.platforms.engineering/GKSME}{GKSME}, \href{https://github.com/Karthick-840}{Karthick-840}}
+	\metasections{\faInstagram:}{\href{https://www.instagram.com/karthick840/?hl=en}{@KaRtHiCk840}}
+	}
+}
+%Use \href{URL}{DESCRIPTION} to add a link with description.
+
+
+\end{center}
+\end{minipage}}\\[-4pt]
+
+%---------------------------------------------------------------------------------------
+%	QR CODE (optional)
+%----------------------------------------------------------------------------------------
+%\vspace{-136pt}
+%\hspace{0.75\linewidth}
+%\includegraphics[width=103pt]{qrcode}
+%\normalsize
+%\vspace{88pt}
+
+%---------------------------------------------------------------------------------------
+%	META SECTION
+%----------------------------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------------------------
+%	SUMMARAY (optional)
+%----------------------------------------------------------------------------------------
+
+%\cvsection{Summary}\\
+%I am a digital media graduate (M.Sc.) with project experience in educational research as well as in the private sector. During my studies I focused on e-assessment software and moved over to b2b software for IBM Notes Domino.
+
+%Currently I develop and evaluate the next generation learning management system with Meteor based on an extensive nursing curriculum for healthcare education.  I also love fitness, martial arts, videogames, news and Sci-Fi series.\\[-2pt]
+
+%============================================================================%
+%
+%	CV SECTIONS AND EVENTS (MAIN CONTENT)
+%
+%============================================================================%
+
+%---------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\cvsection{Relevant Projects}
+
+%
+\cvevent{2022}{Batch Quality metrics in Seed Operations}{Pepper}{To build ensemble model using historical data and images for process decision-making in Seed Operations.}{Developed CNN (Convolutional Neural Network) in Jupyter+Tensorflow to estimate batch quality parameters.}{Set-up rudimentary ETL (Extract, Transform, Load) with transition plans for using AWS for lean MLOps.}
+
+%\textcolor{softcol}{\hrule}
+
+%
+\cvevent{2021}{Digital Solutions for quality bottlenecks in seed production}{Cucurbits}{To improve seed quality and genetic purity using Imaging \& Machine Learning (ML) - A proof-of-concept.}{Led a global team of internal \& external scientists in planning trails, executing experiments and testing commercial deployment feasibility}{Developed a {\sl Random-Forest} model that improved genetic purity by ~25\% in seed batches.}
+
+%\textcolor{softcol}{\hrule}
+
+%
+\cvevent{2019 - 2020}{Minor Projects}{Solanum/Corn}{Collaborated with the team that is developing tools for automated plant quality predictions in seedling stage using imaging and deep learning (DL)}{Built dashboards to visualize crucial biotic and abiotic parameters that influence yield and quality during production.}{Developed imaging-based disease screening and prediction tool to categorize plant resistance.}
+
+%---------------------------------------------------------------------------------------
+%	SKILLS
+%--------------------------------------------------------------------------------------
+\cvsection{Skills}
+
+\cvevents{}{Technical skills}{ {\bf R libraries:} \tag{Dplyr}  \tag{tidyverse} \tag{rpart}  \tag{caret/mlr3}  \tag{ggplot} }{{\bf Python dependencies:} \tag{Keras}  \tag{scikit-learn} \tag{Pandas/Numpy} \tag{Pyspark}  \tag{OpenCV/PlantCV} }{{\bf Applications:} \tag{Git}  \tag{Spotfire} \tag{AWS S3/Sagemaker} \tag{MATLAB}}
+
+\cvevents{}{Soft skills}{ {\bf Scientific:} \tag{Creative thinking}  \tag{Logical reasoning} \tag{complex problem-solving}}{{\bf Professional:} \tag{ Business acumen}  \tag{Critical mindset} \tag{End-to-end strategy}}{{\bf Personal:} \tag{Team work}  \tag{Interpersonal communication} \tag{Empathy}}
+
+\pagebreak
+
+%---------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Education and past experience}
+
+%
+\cvevent{2018-2019}{Research Associate}{Uniklink Dusseldorf}{Molecular cloning, gene knockout, point mutation via Overlap PCR.}{Protein expression and purification studies, DNA and RNA sequencing.}{Sex determination, embryogenesis, microscopy and genetic model development in { \sl Drosophila}.}
+
+
+\cvevent{2016-2017}{Graduate Researcher}{ Goethe University}{̈Performed 2D stem cell culture in a modified osteogenic medium under BSL-2 aseptic conditions.}{Developed statistical models for gene expression, stem cell proliferation and differentiation.}{Developed { \sl Excel Macros} to aid in automated of molecular biology and gene expression studies.}
+
+\cvevent{2014 - 2017}{Master of Science in Biomedical Engineering}{Furtwangen University}{Mathematical modelling and error validation in MATLAB.}{Evaluation of signalling pathways like JAK-STAT pathway.}{Modelled the inter-relation between cellular pathways of adherent tissue culture cells.}
+
+%
+\cvevent{2010 - 2014}{Bachelor of Technology in Biotechnology}{Anna University, India}{Performed microbial and plant tissue culture under BSL-2 aseptic conditions.}{Transformed plasmids using Electroporation for genetic engineering.}{Extracted and analytically purified keratin from poultry waste by chromatography and ultrafiltration.}
+
+\cvsection{Other Details}
+
+\cveventa{}{Recognition }{{\sl It's You!} Recognition : EMEA Vegetable seeds \textbf {PS STAR} for exceptional contribution in 2020.}{{\sl Selected Speaker} - Imaging and AI driven Decision Science for Cucurbits - 2021.}
+
+%\textcolor{softcol}{\hrule}
+
+%
+\cvevents{}{Certification}{Image analysis for plant pheno-typing by Wageningen Summer School- 2019.}{Classifier Design Tool (CDT) for spectral data by Videometer A/S - 2020.}{Masterclass on Seed Technology by Wageningen Seed Science Centre - 2022.}
+
+\cveventa{}{Training and hobbies}{ {\bf Virtual Courses:} \tag{Project Management}  \tag{Six-Sigma} \tag{PowerApps}}{{\bf Hobbies:} \tag{ Weekend traveling}  \tag{Triathlon Training} \tag{Kaggle competition}}
+
+%
+%============================================================================%
+\end{document}
