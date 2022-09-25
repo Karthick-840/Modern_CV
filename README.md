@@ -1,8 +1,12 @@
-latexcv/modern
+Karthick's CV -  Edited in Latex
 =======
 
 Introduction
-------------
+
+Biomedical graduate with experience in fields of image analysis and machine learning for phenotying and genotyping experiments in life sciences. Currently working as  a research associate at Bayer Crop Science, Rotterdam in the field of quality and genetic purity upgrade. With orgins in diverse backgrounds and experiences in a multi-cultural environment focused on teams from different disciplines and cultural backgrounds on solutions for complex problems.\\
+
+
+
 
 A modern cv / resume written in latex modified from Jan Kuster github.
 
